@@ -1,0 +1,254 @@
+\documentclass{beamer}
+
+\usetheme[secheader]{Boadilla}
+\setbeamertemplate{footline} {
+  %\leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,left]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\hspace*{2ex}\insertshortauthor~~(adraeger@cern.ch)
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshorttitle,~
+    \insertshortdate{}\hspace*{1em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\beamertemplatenavigationsymbolsempty
+
+\usepackage[percent]{overpic}
+\usepackage{tikz}
+%\usetikzlibrary{positioning,fit,shapes.arrows,shapes.geometric,shapes.misc,shapes.multipart,calc,shadows}
+\tikzstyle{every picture}+=[remember picture]
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{rotating}
+\usepackage{wasysym}
+\usepackage{marvosym}
+\graphicspath{{../../logo/}{figures/}{../../graphic-common/}}
+
+\input{definitions.tex}
+\newcommand{\lib}[1]{\tiny #1}
+
+% Title etc
+\title[RA2/b Meeting]{Lepton Veto}
+\subtitle{Comparison Isolated Track vs isolated $\mu$ and electron veto}
+\author[Arne-Rasmus~Dr\"ager]{
+  Arne-Rasmus~Dr\"ager (Uni Hamburg)
+}
+\date[October 31, 2014]{October 31, 2014
+  \vskip1cm
+  \begin{center}
+    \includegraphics[height=1.5cm]{Universitaet-Hamburg-Logo.jpg}
+    \hskip8cm
+    \includegraphics[height=1.5cm]{CMSlogo.jpeg}
+  \end{center}
+}
+
+% pdflatex packages
+\hypersetup{bookmarks=true}
+\hypersetup{unicode=false}
+\hypersetup{pdftitle={Islated Tracks}}
+\hypersetup{pdfauthor={Arne-Rasmus~Dr\"ager}}
+
+
+\begin{document}
+% ==================================================
+% --------------------------------------------------
+\begin{frame}
+  \titlepage
+\end{frame}
+
+
+% --------------------------------------------------
+
+\section{Lepton Veto}
+\subsection{Introduction}
+\begin{frame}
+\frametitle{Classical Lepton Veto \& Isolated Track}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \begin{itemize}
+       \item Muon reco \& isolation
+       \begin{itemize}
+       \item POG recommended \\`Tight Muon`
+       \item $p_{T}>10 \gev$ \& $|\eta|<2.5$
+       \item Isolation $\text{Iso}_{\text{Rel}}<20\%$ ($\Delta R=0.4$) 
+       \end{itemize}
+       \item Electron reco \& isolation
+       \begin{itemize}
+       \item POG recommended \\workpoint `Veto`
+       \item $p_{T}>10 \gev$ \& $|\eta|<2.5$
+       \item Isolation $\text{Iso}_{\text{Rel}}<20\%$ ($\Delta R=0.3$) 
+       \end{itemize}
+     \end{itemize}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+     \begin{itemize}
+      \item Isolated Track
+      \begin{itemize}
+       \item Consider charged PF cand with $\text{dz}<0.05$
+       \item Sum tracks (Goodvertix collection) $\text{dz}<0.05$
+       \item $p_{T}>15 \gev$ and
+       \item $\text{Iso}_{\text{cut}}=0.1$ to PF cand
+      \end{itemize}
+     \end{itemize}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+% --------------------------------------------------
+
+\subsection{Expectation}
+\begin{frame}
+\frametitle{Expected events: Lepton veto vs isolated track veto}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/Expectation/IsoTrackStudies__HT__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/Expectation/IsoTrackStudies__MHT__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/Expectation/IsoTrackStudies__NJets__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/Expectation/IsoTrackStudies__BTags__LeptonEx_vs_ITExW+ITExTTbar__Baseline_LeptonVeto_vs_IsoTrackVeto.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item  Isolated track veto shows in all distributions a better performance with no dependency visible in any varialbe.
+  \end{itemize}
+\end{frame}
+% --------------------------------------------------
+
+\subsection{Comparison}
+\begin{frame}
+\frametitle{Amount of events rejected by lepton/isolated track veto}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/Performance/IsoTrackStudies__HT__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/Performance/IsoTrackStudies__MHT__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/Performance/IsoTrackStudies__NJets__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/Performance/IsoTrackStudies__BTags__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item  Isolated track veto shows in all distributions a better performance with no dependency visible in any varialbe.
+  \end{itemize}
+\end{frame}
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Amount of events rejected by lepton/isolated track veto}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.90\textwidth]{figures/Performance/IsoTrackStudies__MTW__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.90\textwidth]{figures/Performance/IsoTrackStudies__NVtx__LeptonEx_vs_ITExWTrue+ITExWFalse+ITExTTbarTrue+ITExTTbarFalse__Baseline_LeptonVeto_vs_IsoTrackVeto_purity.pdf}
+     \end{overpic}
+      \centering
+    \end{column}
+  \end{columns}
+  \begin{itemize}
+   \item  Resolution good enough for \mt cut and no influence of pileup visible.
+  \end{itemize}
+\end{frame}
+% --------------------------------------------------
+
+\subsection{Efficiency}
+\begin{frame}
+\frametitle{Muon Efficiency}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Mu.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/muon/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Mu.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Electron Efficiency}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__HT__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Elec.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__BTags__LeptonExPass_vs_LeptonExFail__Baseline_efficiency_Elec.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_Elec.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/elec/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_Elec.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+% --------------------------------------------------
+\begin{frame}
+\frametitle{Tau Efficiency}
+  \begin{columns}
+    \begin{column}{0.5\textwidth}
+     \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__HT__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}
+     \end{overpic}
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__MHT__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}
+     \end{overpic}
+    \end{column}
+    \begin{column}{0.5\textwidth}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__BTags__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}     \end{overpic}
+      \centering
+      \begin{overpic}[width=0.60\textwidth]{figures/SeparatedEffStudy/tau/IsoTrackStudies__MTW__ITExPass_vs_ITExFail__Baseline_efficiency_tau.pdf}     \end{overpic}
+    \end{column}
+  \end{columns}
+\end{frame}
+% --------------------------------------------------
+\section{Conclusion}
+\begin{frame}
+ \begin{itemize}
+  \item Isolated Track shows better performance than isolated muon and electron veto
+  \item Lepton Veto rejection:$46167.5$ (QCD false rejection: $31.3 $)
+  \item Iso. Track rejection:$56369,6$ false $3475.5$ (6\%) (QCD false rejection: $84.8 $)
+  \item Purity at around 6\%
+  \item Estimatino method for both lost lepton and had tau would need to be modified significantly
+ \end{itemize}
+
+\end{frame}
+
+
+\section{Backup}
+\begin{frame}
+  \begin{center}
+    {\Large Additional Material}
+  \end{center}
+\end{frame}
+
+
+
+\setcounter{framenumber}{16}
+
+\end{document}
